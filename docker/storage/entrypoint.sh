@@ -1,0 +1,1 @@
+/usr/storage/init.sh & /opt/mssql/bin/sqlservr

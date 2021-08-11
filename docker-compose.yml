@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+    permission_api_msssql:
+        image: permission_api/permission_api_mssql
+        tty: true
+        privileged: true
+        build:
+            context: .
+            dockerfile: docker/dockerfile.mssql
+        ports:
+            - 1083:5083
+        volumes:
+            - ./docker/storage:/usr/storage

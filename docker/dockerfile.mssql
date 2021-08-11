@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+USER root
+
+VOLUME ["/usr/storage"]
+
+ENV ACCEPT_EULA=Y
+ENV MSSQL_SA_PASSWORD='M4LRVqm]x,kv'
+ENV MSSQL_PID='Developer'
+ENV MSSQL_MEMORY_LIMIT_MB=2048
+ENV MSSQL_TCP_PORT=5083
+
+EXPOSE 5083
+COPY ./docker/storage /usr/storage
+
+#otorgar permisos de ejecución '+x'
+RUN chmod +x /usr/storage/entrypoint.sh
+RUN chmod +x /usr/storage/init.sh
+
+#ejecutar entrypoint
+CMD /bin/bash /usr/storage/entrypoint.sh

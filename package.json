@@ -1,0 +1,26 @@
+{
+  "name": "permissionsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node src/index.js",
+    "lint": "eslint"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.3.0",
+    "npx": "^10.2.2",
+    "pnpm": "^6.12.1",
+    "sequelize": "^6.6.5",
+    "tedious": "^11.4.0",
+    "uuid": "^8.3.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "webpack": "^5.49.0"
+  }
+}

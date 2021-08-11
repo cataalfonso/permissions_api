@@ -1,0 +1,1 @@
+/opt/mssql-tools/bin/sqlcmd -S localhost,5083 -U SA -P 'M4LRVqm]x,kv' -i /usr/storage/create-schema.sql

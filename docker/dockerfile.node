@@ -1,0 +1,19 @@
+FROM node:16-alpine3.11-latest
+
+USER root
+
+VOLUME ["/usr/storage"]
+
+ENV ACCEPT_EULA=Y
+
+COPY ./docker/storage /usr/storage
+
+#instalaciones locales
+RUN npm install --global gulp-cli
+RUN npm i pnpm
+RUN npm i webpack
+RUN npm i webpack-dev-server
+RUN npm i npx
+
+#ejecutar aplicación
+CMD ["node", "usr/storage/app/src/index.js"] 
