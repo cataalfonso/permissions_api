@@ -1,4 +1,4 @@
-import  db from require ("../db/connection");
+const  db = require('../connection');
 
 class Server {
   constructor() {
@@ -15,4 +15,4 @@ class Server {
   }
 }
 
-export default Server;
+module.exports= Server;

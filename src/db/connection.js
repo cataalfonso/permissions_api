@@ -1,8 +1,8 @@
-import { Sequelize } from 'sequelize';
+const Sequelize= require('sequelize');
 
 const db = new Sequelize('TestFrontEnd','SA','M4LRVqm]x,kv',{
     host:'localhost',
     dialect:'mssql'
 });
 
-export default db;
+module.exports= db;

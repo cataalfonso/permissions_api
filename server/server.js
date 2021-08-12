@@ -1,4 +1,4 @@
-import  db from require ("../src/db/connection");
+import { db } from "../src/db/connection";
 
 class Server {
   constructor() {
