@@ -5,9 +5,8 @@ class Permission extends Master{
     constructor(){
         super();
         this.module= 0;
+        this.user= new User();
         this.role=0;
-        this.userid= new User();
-    
     }
 
 };

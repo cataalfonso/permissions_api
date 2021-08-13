@@ -5,7 +5,7 @@ class History {
         this.field='';
         this.old_value='';
         this.new_value='';
-        this.userid=0;
+        this.user=0;
         this.module=0;
         this.created_at= new Date();
     }

@@ -4,6 +4,7 @@ class Module extends Master{
     constructor(){
         super();
         this.module_type= 0;
+        this.description= '';
         
     }
 

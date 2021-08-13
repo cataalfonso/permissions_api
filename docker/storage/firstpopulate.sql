@@ -8,7 +8,7 @@ INSERT INTO [user] (rol ,full_name, login_name, emaiL, active, created_at) VALUE
 INSERT INTO [user]  (rol ,full_name, login_name, emaiL, active, created_at) VALUES(2, 'Lola Lambda', 'lolalam', 'lolalamj@example.com', 1,GETDATE());
 INSERT INTO [user]  (rol ,full_name, login_name, emaiL, active, created_at) VALUES(3, 'Joseph Gebels', 'josegeb', 'josegeb@example.com', 1,GETDATE());
 GO
-INSERT INTO pass_reset (code, expires, created_at) VALUES(1,'JAJAJA',GETDATE()+2, GETDATE());
+INSERT INTO pass_reset (code, expires, created_at) VALUES('JAJAJA',GETDATE()+2, GETDATE());
 GO
 INSERT INTO log_type (description) VALUES('logtype1');
 INSERT INTO log_type (description) VALUES('logtype2');

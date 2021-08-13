@@ -132,6 +132,11 @@ FOREIGN KEY ([role]) REFERENCES [role] ([id])
 GO
 
 ALTER TABLE [permission] 
+ADD CONSTRAINT FK_permission_module 
+FOREIGN KEY ([module]) REFERENCES [module] ([id])
+GO
+
+ALTER TABLE [permission] 
 ADD CONSTRAINT FK_permission_user 
 FOREIGN KEY ([user]) REFERENCES [user] ([id])
 GO
