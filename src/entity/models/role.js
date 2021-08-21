@@ -1,11 +1,22 @@
-const Master = require("../master");
+const {DataTypes, Model } = require('sequelize');
+const  db = require('../../db/connection');
 
-class Role extends Master {
-    constructor(){
-        super();
-        this.description= '';
-    }
+class role extends Model {}
 
-};
+role.init({
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: 'compositeIndex'
+  },
+  active: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false
+  }
+}, {
+  sequelize: db, 
+  modelName: 'role' 
+});
 
-module.exports =Role;
+
+module.exports =role;
