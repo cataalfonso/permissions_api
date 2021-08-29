@@ -9,7 +9,7 @@ constructor() {
   
     index(){
         let newrole={
-            description: 'prueba1',
+            description: 'prueba111',
             active: 1,
 
         };

@@ -13,7 +13,8 @@ class DbSet extends Array{
         let t= await sequelize.transaction();
         try{
             let newItem= await Role.create(item, {transaction:t});
-            console.log("auto-generated ID:", newItem);
+            console.log("auto-generated ID:", newItem.id);
+            console.log(newItem instanceof Role);
         }
         catch (error) {
             console.log(error);
