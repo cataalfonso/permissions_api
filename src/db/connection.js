@@ -1,6 +1,6 @@
-const { Sequelize} = require('sequelize');
+const {Sequelize} = require ('sequelize');
 
-const db = new Sequelize('TestFrontEnd','SA','M4LRVqm]x,kv',{
+const sequelize = new Sequelize('TestFrontEnd','SA','M4LRVqm]x,kv',{
     host:'localhost',
     dialect:'mssql',
     port: '1083',
@@ -9,4 +9,4 @@ const db = new Sequelize('TestFrontEnd','SA','M4LRVqm]x,kv',{
       }
 });
 
-module.exports= db;
+module.exports= sequelize;

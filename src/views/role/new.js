@@ -1,4 +1,4 @@
-const RoleController = require("../../controller/role.controller");
+const RoleController = require ('../../controller/role.controller');
 
 
 class NewView {
@@ -9,18 +9,14 @@ constructor() {
   
     index(){
         let newrole={
-            desc: 'prueba1',
-            active: 'yes',
-            created_at: new Date(),
-            end_at:new Date(),
-            modified_at:new Date(),
+            description: 'prueba1',
+            active: 1,
 
         };
         this.controller.add(newrole);
-        console.log("sucess");
     }
 
   }
   
   
-  module.exports = NewView;
+  module.exports=  NewView;

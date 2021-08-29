@@ -1,4 +1,4 @@
-const  db = require('../connection');
+const sequelize = require ('../connection');
 
 class Server {
   constructor() {
@@ -7,7 +7,7 @@ class Server {
 
   async dbConnection() {
     try {
-      await db.authenticate();
+      await sequelize.authenticate();
       console.log("Database online");
     } catch (error) {
       throw new Error(error);

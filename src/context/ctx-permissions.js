@@ -1,15 +1,17 @@
-const DbContext = require('../db/db-context');
-const DbSet = require('../db/db-set');
-const dbConfig = require('../../config/config.json');
 
+const sequelize= require('../db/connection')
+const DbSet = require ('../db/db-set');
 
-class CtxPermissions extends DbContext{
+class CtxPermissions {
     constructor(){
-        const dbPath = dbConfig.dbPath;
-        super(dbPath);
         this.roles = new DbSet();
-        
-        this.load();
+
+       // this.sync();
     }
+
+    /*async sync(){
+    await sequelize.sync({ alter: true });
+    console.log("All models were synchronized successfully.");
+    } */
 }
-module.exports = CtxPermissions;
+module.exports=CtxPermissions;

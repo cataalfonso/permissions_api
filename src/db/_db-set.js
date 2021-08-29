@@ -1,26 +1,27 @@
-const sequelize = require ('../db/connection')
-const Role = require('../entity/models/role');
+const uuid = require('uuid');
 
-
-
-class DbSet extends Array{
+class _DbSet extends Array{
     constructor(){
         super();
         this.hasChanges = false;
+        this.save = null;
     }
-
-    async add(item){
-        let t= await sequelize.transaction();
-        try{
-            let newItem= await Role.create(item, {transaction:t});
-            console.log("auto-generated ID:", newItem);
-        }
-        catch (error) {
-            console.log(error);
-            await t.rollback();
-        }
+    add(item, _propName){
+        console.log(item.constructor.name);
+        let _item ={id: uuid.v4(), ...item}; 
+        if (_propName){
+            _propName.push(_item); // y el child?
+        };
+        Object.keys(_item).forEach((element) => {
+           if (typeof _item[element]==='object'){
+               _item[element]=_item[element].id 
+           };
+        });
+        this.push(_item);
+        this.hasChanges = true;
+        this.save();
+        return _item
     }
-
     remove(id){
         const index = this.findIndex(item => item.id === id);
         if (index >=0){
@@ -50,4 +51,4 @@ class DbSet extends Array{
 
 }
 
-module.exports = DbSet;
+module.exports = _DbSet;

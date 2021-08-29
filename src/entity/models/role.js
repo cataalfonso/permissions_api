@@ -1,9 +1,15 @@
-const {DataTypes, Model } = require('sequelize');
-const  db = require('../../db/connection');
+const {DataTypes, Model} = require ("sequelize");
+const sequelize = require ('../../db/connection');
 
-class role extends Model {}
+class Role extends Model {}
 
-role.init({
+Role.init({
+  id:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    autoIncrement: true,
+    primaryKey: true,
+  },
   description: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -14,9 +20,11 @@ role.init({
     allowNull: false
   }
 }, {
-  sequelize: db, 
-  modelName: 'role' 
+  sequelize: sequelize, 
+  modelName: 'role', 
+  tableName: 'role',
+  createdAt: 'created_at',
+  updatedAt: 'end_at',
 });
 
-
-module.exports =role;
+module.exports=Role;
