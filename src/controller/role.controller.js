@@ -1,6 +1,7 @@
 const CtxPermissions = require ('../context/ctx-permissions');
 const Role = require ('../entity/models/role');
-const CreateRole= require('../entity/commands/role/create')
+const CreateRole= require('../entity/commands/role/create');
+const UpdateRole = require('../entity/commands/role/update');
 
 
 class RoleController {
@@ -10,16 +11,32 @@ class RoleController {
   }
 
   add(role) {
-    console.log("role:",role)
     let newItem= new CreateRole();
     for (let key in newItem){
       newItem[key]= role[key];
-      console.log(key);
     };
-    console.log("newItem:", newItem)
-      this.context.roles.add(newItem);
+    this.context.roles.add(newItem, Role);
   }
 
-}
+  findById (id){
+    let element= this.context.roles.findById(id, Role);
+    return element
+  }
+
+  update(role){
+    let updatedItem= new UpdateRole;
+    for (let key in updatedItem){
+      updatedItem[key]= role[key];
+    };
+    this.context.roles.update(updatedItem, Role)
+  }
+
+  remove (id){
+    this.context.roles.remove(id, Role)
+  }
+
+  }
+
+
 
 module.exports= RoleController;
