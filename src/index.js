@@ -12,7 +12,7 @@ let deleteRole=new DeleteView;
 
 
 newServer.dbConnection();
-newRole.index();
-searchRole.index();
-updateRole.index();
-deleteRole.index();
+//newRole.index();
+searchRole.index(searchRole.message);
+//updateRole.index();
+//deleteRole.index();

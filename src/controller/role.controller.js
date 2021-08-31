@@ -20,7 +20,10 @@ class RoleController {
 
   findById (id){
     let element= this.context.roles.findById(id, Role);
-    return element
+    //element.then(()=>{
+      console.log('element en el controller', element);
+      return element
+    //});  
   }
 
   update(role){

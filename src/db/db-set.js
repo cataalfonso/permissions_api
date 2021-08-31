@@ -8,6 +8,7 @@ class DbSet extends Array{
 
     async add(item, model){
         let t= await sequelize.transaction();
+        console.log('Creando registro');
         try{
             let newItem= await model.create(item, {transaction:t});
             console.log("auto-generated ID:", newItem.id);
@@ -21,6 +22,7 @@ class DbSet extends Array{
 
     async remove(id, model){
         let t= await sequelize.transaction();
+        console.log('Eliminando registro');
         try{
             await model.destroy({
                 where: {
@@ -35,16 +37,23 @@ class DbSet extends Array{
     }
 
     findById(id, model){
+        console.log('Consultando registro');
         let item = model.findAll({
             where:{
                 id: id
             }
         });
-        return item;
+        item.then(()=>{
+            return item;
+        });
+        item.catch((error)=>{
+            return error;
+        });
     }
 
     async update(object, model){
         let t= await sequelize.transaction();
+        console.log('Actualizando registro');
         try{
             await model.update({ object }, {
                 where: {
