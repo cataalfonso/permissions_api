@@ -6,13 +6,11 @@ class SearchView {
         this.controller = new RoleController();
     }     
     
-    index(){
+    async index(){
         let id= 1;
-        let element= this.controller.findById(id);
-        //element.then((message)=>{
-            console.log('resultado de la consulta con id ', id, ': ', element);
-       // });    
-      
+        let element= await this.controller.findById(id);
+        console.log('resultado de la consulta con id ', id, ': ', element);
+         
     }
    
 

@@ -18,12 +18,9 @@ class RoleController {
     this.context.roles.add(newItem, Role);
   }
 
-  findById (id){
-    let element= this.context.roles.findById(id, Role);
-    //element.then(()=>{
-      console.log('element en el controller', element);
+  async findById (id){
+    let element= await this.context.roles.findById(id, Role);
       return element
-    //});  
   }
 
   update(role){

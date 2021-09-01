@@ -36,19 +36,19 @@ class DbSet extends Array{
         }
     }
 
-    findById(id, model){
+    async findById(id, model){
         console.log('Consultando registro');
-        let item = model.findAll({
+        let item = await model.findAll({
             where:{
                 id: id
             }
         });
-        item.then(()=>{
+        try{
             return item;
-        });
-        item.catch((error)=>{
+        }catch(error){
             return error;
-        });
+        }
+        
     }
 
     async update(object, model){
