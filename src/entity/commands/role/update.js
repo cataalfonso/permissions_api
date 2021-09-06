@@ -1,7 +1,7 @@
 class UpdateRole {
     constructor(){
         this.id='';
-        this.desc= '';
+        this.description= '';
         this.active='';
     }
 

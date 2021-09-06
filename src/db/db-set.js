@@ -7,21 +7,18 @@ class DbSet extends Array{
     }
 
     async add(item, model){
-        let t= await sequelize.transaction();
         console.log('Creando registro');
         try{
-            let newItem= await model.create(item, {transaction:t});
+            let newItem= await model.create(item);
             console.log("auto-generated ID:", newItem.id);
             console.log(newItem instanceof model);
         }
         catch (error) {
             console.log(error);
-            await t.rollback();
         }
     }
 
     async remove(id, model){
-        let t= await sequelize.transaction();
         console.log('Eliminando registro');
         try{
             await model.destroy({
@@ -32,7 +29,6 @@ class DbSet extends Array{
         }    
         catch (error) {
             console.log(error);
-            await t.rollback();
         }
     }
 
@@ -52,10 +48,9 @@ class DbSet extends Array{
     }
 
     async update(object, model){
-        let t= await sequelize.transaction();
-        console.log('Actualizando registro');
+        console.log('Actualizando registro', object);
         try{
-            await model.update({ object }, {
+            await model.update( object , {
                 where: {
                     id: object.id
                 }
@@ -63,7 +58,6 @@ class DbSet extends Array{
         }             
         catch (error) {
             console.log(error);
-            await t.rollback();
         }      
     }
 

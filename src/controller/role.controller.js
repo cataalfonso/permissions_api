@@ -10,12 +10,12 @@ class RoleController {
     this.context = new CtxPermissions();
   }
 
-  add(role) {
+  async add(role) {
     let newItem= new CreateRole();
     for (let key in newItem){
       newItem[key]= role[key];
     };
-    this.context.roles.add(newItem, Role);
+    await this.context.roles.add(newItem, Role);
   }
 
   async findById (id){

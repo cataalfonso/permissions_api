@@ -7,13 +7,13 @@ constructor() {
       this.controller = new RoleController();
 }     
   
-    index(){
+    async index(){
         let newrole={
-            description: 'prueba111',
-            active: 1,
+            description: 'prueba112',
+            active: true,
 
         };
-        this.controller.add(newrole);
+        await this.controller.add(newrole);
     }
 
   }

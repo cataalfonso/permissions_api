@@ -23,7 +23,7 @@ Role.init({
   sequelize: sequelize, 
   modelName: 'role', 
   tableName: 'role',
-  createdAt: 'created_at',
+  createdAt: 'created_at', 
   updatedAt: 'end_at',
 });
 
