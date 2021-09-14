@@ -4,15 +4,15 @@ const SearchView = require('./views/role/search');
 const UpdateView = require('./views/role/update');
 const DeleteView = require('./views/role/delete');
 
-let newServer= new NewServer;
-let newRole= new NewView;
-let searchRole= new SearchView;
-let updateRole= new UpdateView;
-let deleteRole=new DeleteView;
+//let newServer= new NewServer;
+//let newRole= new NewView;
+//let searchRole= new SearchView;
+//let updateRole= new UpdateView;
+//let deleteRole=new DeleteView;
 
 
-newServer.dbConnection();
+//newServer.dbConnection();
 //newRole.index();
 //searchRole.index();
-updateRole.index();
+//updateRole.index();
 //deleteRole.index();
