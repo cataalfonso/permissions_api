@@ -1,11 +1,28 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+var xml = require('xml');
+
+//cors
+app.use((req, res, next) => {
+    res.set("Access-Control-Allow-Credentials", "true");
+    res.set("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.set("Access-Control-Allow-Headers", "Content-Type");
+    res.set("Access-Control-Allow-Methods", "OPTIONS,GET,PUT,POST,DELETE");
+    next();
+  });  
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+    res.send('Hola')
+  })
+  
+app.get('/Json', (req, res) => {
+    res.json({'respuesta':'Hola'})
+  })  
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.get('/xml', (req, res) => {
+    res.type('application/xml');
+    res.send(xml({'respuesta':'Hola'}))
+  }) 
+
+
+module.exports=app;
