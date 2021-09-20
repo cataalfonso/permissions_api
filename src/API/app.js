@@ -1,28 +1,12 @@
 const express = require('express');
+var cors = require('cors')
 const app = express();
-var xml = require('xml');
+const AppRouter = require ('./app-router');
 
-//cors
-app.use((req, res, next) => {
-    res.set("Access-Control-Allow-Credentials", "true");
-    res.set("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.set("Access-Control-Allow-Headers", "Content-Type");
-    res.set("Access-Control-Allow-Methods", "OPTIONS,GET,PUT,POST,DELETE");
-    next();
-  });  
+//cors Cross-origin resource sharing
+app.use(cors());
+//app.use crea un middleware antes de que llegue a cada llamada 
 
-app.get('/', (req, res) => {
-    res.send('Hola')
-  })
-  
-app.get('/Json', (req, res) => {
-    res.json({'respuesta':'Hola'})
-  })  
-
-app.get('/xml', (req, res) => {
-    res.type('application/xml');
-    res.send(xml({'respuesta':'Hola'}))
-  }) 
-
+AppRouter.route(app);
 
 module.exports=app;
