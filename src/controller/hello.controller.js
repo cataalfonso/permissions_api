@@ -1,6 +1,9 @@
 const xml = require('xml');
 
 class helloController{
+    constructor() {
+        
+      }
 
     sayHello (req, res) {
     res.send('Hola');
@@ -17,4 +20,4 @@ sayHelloJSON (req, res) {
 
 }
 
-  module.exports= helloController;  
+module.exports= helloController;  

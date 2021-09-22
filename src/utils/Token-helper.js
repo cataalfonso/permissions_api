@@ -5,7 +5,13 @@ const md5 = require ('md5');
 const PRIVATE_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNQExGMjMwOSIsIm5hbWUiOiJGcmFuY2lzY28gQWxmb25zbyBCdWl0cmFnbyIsImlhdCI6MTE1MjQ0MjgxN30.NW91BDLWprw_sCwW-aBUF7Os5RZH21EfNcl9RuYz_VU";
 
 class TokenHelper{
-    static signIn(id, userName, role){
+
+    constructor(){
+        this.signIn();
+    } 
+
+
+    signIn(id, userName, role){
         const accessToken =  jwt.sign({id: id, username: userName, role: role}, PRIVATE_TOKEN,{
             expiresIn:'1h'
         });
@@ -14,11 +20,11 @@ class TokenHelper{
         expires.setHours(now.getHours() + 1);
         return {accessToken, start: now.getTime(), expires: expires.getTime()}
     }
-    static securePassword(password){
+    securePassword(password){
         return md5(password);
     }
 
-    static accessTokenValidation(req, res, next){
+    accessTokenValidation(req, res, next){
             const authHeader = req.headers.authorization;
             if (authHeader) {
                 const token = authHeader.split(' ')[1];
