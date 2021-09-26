@@ -2,8 +2,7 @@ const xml = require('xml');
 
 class helloController{
     constructor() {
-        
-      }
+              }
 
     sayHello (req, res) {
     res.send('Hola');

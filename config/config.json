@@ -1,3 +1,4 @@
 {
-    "dbPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/data"
+    "dbPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/data",
+    "ControllersPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/src/controller"
 }
