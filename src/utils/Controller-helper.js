@@ -8,6 +8,7 @@ class ControllerHelper{
 
 ReadFile(){
     const fileContent = fs.readFileSync(this.path,{encoding: 'utf-8'});
+    console.log (fileContent);
     return fileContent;
  }
  
@@ -18,6 +19,8 @@ ReadFile(){
      const classExport= `\n }; \n module.exports=${answers.name}Controller;`;
      const Document = `${classConstructor} \n ${methods} \n ${classExport}`; 
      fs.writeFileSync(this.path,Document,{encoding: 'utf-8'}); 
+     console.log('Controlador creado');
+     this.ReadFile();
 }
 
 UpdateRoutes(routesfile, {routes}){
