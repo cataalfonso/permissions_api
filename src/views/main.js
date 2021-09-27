@@ -1,10 +1,11 @@
 const inquirer = require('inquirer');
 const ControllerHelper=require ('../utils/Controller-helper')
+const config= require('../../config/config.json')
 
   class MainView {
 
     constructor() {
-          this.controller = new ControllerHelper();
+          this.controller = new ControllerHelper(config.ControllersPath);
           this.addquestions = [
             {
               type: 'input',
