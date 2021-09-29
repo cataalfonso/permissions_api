@@ -15,7 +15,11 @@ ReadFile(){
  CreateControllerTemplate(answers){
      this.path+=`/${answers.name}.js`;
      const classConstructor= `class ${answers.name}Controller{ \n constructor() { \n }`;
-     const methods= 'methods';
+     let methodList= answers.rutas.split(",");
+     let methods= "";
+     for (let element in methodList){
+          methods+= `\n${methodList[element]}(){\n}\n`;
+     }
      const classExport= `\n }; \n module.exports=${answers.name}Controller;`;
      const Document = `${classConstructor} \n ${methods} \n ${classExport}`; 
      fs.writeFileSync(this.path,Document,{encoding: 'utf-8'}); 

@@ -1,7 +1,13 @@
 class testController{ 
  constructor() { 
  } 
- methods 
  
- }; 
+m1(){
+}
+
+m2(){
+}
+ 
+ 
+ } 
  module.exports=testController;
