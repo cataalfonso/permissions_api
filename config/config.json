@@ -1,4 +1,5 @@
 {
     "dbPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/data",
-    "ControllersPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/src/controller"
+    "ControllersPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/src/controller",
+    "RoutesPath":"/Users/cataalfonso/Documents/Documents/Proyectos/PermissionsAPI/src/API/app-router.js"
 }

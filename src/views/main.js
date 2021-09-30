@@ -22,7 +22,13 @@ const config= require('../../config/config.json')
       
         index() {
           inquirer.prompt(this.addquestions).then((answers) => {
-            this.controller.CreateControllerTemplate(answers);
+            try{
+              this.controller.CreateControllerTemplate(answers);
+              console.log('Controlador creado');
+            } catch(ex){
+              console.log(ex);
+              this.index();
+            }
         });
       }
     }     
